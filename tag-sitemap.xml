@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>http://tsangsi.github.io.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
-        <lastmod>2019-10-12T03:58:07.773Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://tsangsi.github.io.com/tags/Hexo/</loc>
         <lastmod>2019-10-15T06:11:36.645Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -32,6 +25,13 @@
     <url>
         <loc>http://tsangsi.github.io.com/tags/cocos2d-x-3-x/</loc>
         <lastmod>2019-10-15T06:11:43.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://tsangsi.github.io.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
+        <lastmod>2019-10-21T08:47:49.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

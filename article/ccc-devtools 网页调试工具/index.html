@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [Lua] lua 从字符串获取指定第几位数到第几位数 - Tsang Si | Blog
+          [游戏开发] 游戏资源二次压缩 - Tsang Si | Blog
         
     </title>
 
-    <link rel="canonical" href="http://tsangsi.github.io.com/article/lua-chsize/">
+    <link rel="canonical" href="http://tsangsi.github.io.com/article/ccc-devtools 网页调试工具/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,10 +88,10 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Lua" title="Lua">Lua</a>
+                              <a class="tag" href="/tags/#游戏开发" title="游戏开发">游戏开发</a>
                             
                         </div>
-                        <h1>[Lua] lua 从字符串获取指定第几位数到第几位数</h1>
+                        <h1>[游戏开发] 游戏资源二次压缩</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Tsang Si on
@@ -212,82 +212,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>– 判断utf8字符byte长度<br>
-– 0xxxxxxx - 1 byte<br>
-– 110yxxxx - 192, 2 byte<br>
-– 1110yyyy - 225, 3 byte<br>
-– 11110zzz - 240, 4 byte<br>
-local function chsize(char)<br>
-		if not char then<br>
-		    print(“not char”)<br>
-		    return 0<br>
-		    elseif char &gt; 240 then<br>
-		    return 4<br>
-		    elseif char &gt; 225 then<br>
-		    return 3<br>
-		    elseif char &gt; 192 then<br>
-		    return 2<br>
-		    else<br>
-		    return 1<br>
-	    end<br>
-end</p>
-<pre><code>-- 计算utf8字符串字符数, 各种字符都按一个字符计算
--- 例如utf8len(&quot;1你好&quot;) =&gt; 3
-function utf8len(str)
-    local len = 0
-    local currentIndex = 1
-    while currentIndex &lt;= #str do
-	    local char = string.byte(str, currentIndex)
-	    currentIndex = currentIndex + chsize(char)
-	    len = len +1
-    end
-    return len
-end
-
--- 截取utf8 字符串
--- str: 要截取的字符串
--- startChar:   开始字符下标,从1开始
--- numChars:要截取的字符长度
-function utf8sub(str, startChar, numChars)
-    local startIndex = 1
-    while startChar &gt; 1 do
-	    local char = string.byte(str, startIndex)
-	    startIndex = startIndex + chsize(char)
-	    startChar = startChar - 1
-    end
-
-    local currentIndex = startIndex
-    
-    while numChars &gt; 0 and currentIndex &lt;= #str do
-	    local char = string.byte(str, currentIndex)
-	    currentIndex = currentIndex + chsize(char)
-	    numChars = numChars -1
-    end
-    return str:sub(startIndex, currentIndex - 1)
-end
-
--- 自测
-function test()
-    -- test utf8len
-    assert(utf8len(&quot;你好1世界哈哈&quot;) == 7)
-    assert(utf8len(&quot;你好世界1哈哈 &quot;) == 8)
-    assert(utf8len(&quot; 你好世 界1哈哈&quot;) == 9)
-    assert(utf8len(&quot;12345678&quot;) == 8)
-    assert(utf8len(&quot;øpø你好pix&quot;) == 8)
-
-    -- test utf8sub
-    assert(utf8sub(&quot;你好1世界哈哈&quot;,2,5) == &quot;好1世界哈&quot;)
-    assert(utf8sub(&quot;1你好1世界哈哈&quot;,2,5) == &quot;你好1世界&quot;)
-    assert(utf8sub(&quot; 你好1世界 哈哈&quot;,2,6) == &quot;你好1世界 &quot;)
-    assert(utf8sub(&quot;你好世界1哈哈&quot;,1,5) == &quot;你好世界1&quot;)
-    assert(utf8sub(&quot;12345678&quot;,3,5) == &quot;34567&quot;)
-    assert(utf8sub(&quot;øpø你好pix&quot;,2,5) == &quot;pø你好p&quot;)
-    
-    print(&quot;all test succ&quot;)
-end
-
-test()
-</code></pre>
+                <p>ccc-devtools v2.3.2<br>
+Cocos Creator 网页调试工具，运行时查看、修改节点树，实时更新节点属性，可视化显示缓存资源。<br>
+<a href="https://github.com/potato47/ccc-devtools" title="下载" target="_blank" rel="noopener">https://github.com/potato47/ccc-devtools</a></p>
 <h1 id="have-fun-_">Have fun ^_^</h1>
 <hr>
 <!-- Place this tag in your head or just before your close body tag. -->
@@ -303,12 +230,12 @@ Peace!</p>
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/ccc-devtools 网页调试工具/" data-toggle="tooltip" data-placement="top" title="[游戏开发] 游戏资源二次压缩">&larr; Previous Post</a>
+                            <a href="/article/游戏开发-四叉树碰撞优化版，速度飞一样/" data-toggle="tooltip" data-placement="top" title="[游戏开发] 四叉树碰撞优化版，速度飞一样">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/CCConfiguration.o/" data-toggle="tooltip" data-placement="top" title="[cocos2d-x 3.x] make: *** No rule to make target ...CCConfiguration.o Stop.">Next Post &rarr;</a>
+                            <a href="/article/lua-chsize/" data-toggle="tooltip" data-placement="top" title="[Lua] lua 从字符串获取指定第几位数到第几位数">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -378,7 +305,7 @@ Peace!</p>
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Lua" title="Lua">Lua</a>
+                          <a class="tag" href="/tags/#游戏开发" title="游戏开发">游戏开发</a>
                         
                     </div>
                 </section>
